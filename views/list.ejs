@@ -17,7 +17,7 @@
     <form action="/" method="POST">
 
         <div action="/" method="POST" class="form-group col-md-5 cntr">
-            <input type="text" name="Task" class="form-control" id="formGroupExampleInput" placeholder="Add New Task ... ">
+            <input type="text" name="Task" class="form-control" id="formGroupExampleInput" placeholder="Add New Task ... " required>
         </div>
         <div>
             <button class="btn btn-primary custom-things" type="submit"><i class="bi bi-plus"></i></button>
@@ -26,6 +26,15 @@
         
     </form>
     
+    <div class="col-md-4 col-11 cntr tasks">
+            <%if(items.length==0){%>
+                <p>Your Task List is empty</p>
+            <%}else{for (var i = 0; i < items.length; i++) { %>
+                <p><%=i+1+"."%> <%=items[i]%> </p>
+            <% } }%>
+
+            
+    </div>
 
 
     <p>The vector stores tasks for only one day</p>
